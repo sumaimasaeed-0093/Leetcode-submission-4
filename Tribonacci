@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int tribonacci(int x) {
+    if (x <= 0) 
+        return 0;
+    else if (x == 1) 
+        return 1;
+    else if (x == 2) 
+        return 1;
+
+    int a = tribonacci(x - 1);
+    int b = tribonacci(x - 2);
+    int c = tribonacci(x - 3);
+
+    return a + b + c;
+}
+
+int main() {
+    int num;
+
+    printf("Enter a number to find its Tribonacci value: ");
+    scanf("%d", &num);
+
+    int ans = tribonacci(num);
+
+    printf("Tribonacci(%d) = %d\n", num, ans);
+
+    return 0;
+}
+
